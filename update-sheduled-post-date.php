@@ -5,7 +5,13 @@ Description: Updates the post publication and modification dates to the actual p
 Version: 1.1
 Author: big_jacky
 Author URI:  https://t.me/@big_jacky
+Plugin URI: https://github.com/seojacky/update-sheduled-post-date
+GitHub Plugin URI: https://github.com/seojacky/update-sheduled-post-date
+Text Domain: update-sheduled-post-date
+Domain Path: /languages
 */
+/* Exit if accessed directly */
+if ( ! defined( 'ABSPATH' ) ) {	return;}
 
 function update_scheduled_post_dates($post_id) {
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) 
@@ -30,4 +36,3 @@ function update_scheduled_post_dates($post_id) {
 }
 
 add_action('publish_future_post', 'update_scheduled_post_dates');
-?>
